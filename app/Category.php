@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     /**
-     * Get the items for the category.
+     * Get the items of the category.
      */
     public function items()
     {
@@ -15,7 +15,7 @@ class Category extends Model
     }
 
     /**
-     * Get the sizes for the category.
+     * Get the sizes of each category.
      */
     public function sizes()
     {

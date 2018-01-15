@@ -11,6 +11,14 @@ class Item extends Model
      */
     public function models()
     {
-        return $this->hasMany('App\Model');
+        return $this->hasMany('App\ItemModel');
+    }
+
+    /**
+     * Get the category of the item.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\Category')->withDefault();
     }
 }
