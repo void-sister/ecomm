@@ -16,4 +16,8 @@ Route::get('/', function () {
 });
 
 
+Route::resource('categories', 'CategoryController');
 Route::resource('colors', 'ColorController');
+Route::resource('item_models', 'ItemModelController');
+Route::resource('items', 'ItemController');
+Route::resource('sizes', 'SizeController');
