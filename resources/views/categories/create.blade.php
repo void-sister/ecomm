@@ -6,6 +6,13 @@
 
 @section('content')
 
+{!! Form::open(['action' => 'CategoryController@store']) !!}
 
-<br><a href="{{ URL::to('categories/') }}">Back</a>
+    {!! Form::label('category_lbl', 'Category Name:') !!}
+    {!! Form::text('category_name') !!}
+    <br>
+    {!! Form::submit('Submit') !!}
+
+{!! Form::close() !!}
+
 @endsection 

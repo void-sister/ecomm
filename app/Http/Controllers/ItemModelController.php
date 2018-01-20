@@ -26,7 +26,7 @@ class ItemModelController extends Controller
      */
     public function create()
     {
-        //
+        return view('item_models.create');
     }
 
     /**
