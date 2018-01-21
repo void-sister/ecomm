@@ -9,6 +9,13 @@
 {!! Form::open(['action' => 'SizeController@store']) !!}
 
     {{--  dropdown list of categories --}}
+    {!! Form::select('cat_lbl', 
+        ['0' => 'Select Category', 
+        '1' => 'Sees Sunlight', 
+        '2' => 'Foosball Fanatic', 
+        '3' => 'Basement Dweller']) 
+    !!}
+
     {!! Form::label('size_lbl', 'Enter Size:') !!}
     {!! Form::text('size') !!}
     <br>
