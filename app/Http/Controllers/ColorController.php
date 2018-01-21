@@ -34,9 +34,13 @@ class ColorController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        //
+        $color = new Color;
+        $color->color = $request->color;
+        $color->save();
+
+        return redirect('colors');
     }
 
     /**
