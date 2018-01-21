@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::resource('categories', 'CategoryController');
-Route::resource('colors', 'ColorController');
-Route::resource('item_models', 'ItemModelController');
-Route::resource('items', 'ItemController');
-Route::resource('sizes', 'SizeController');
+Route::resources([
+    'categories' => 'CategoryController',
+    'colors' => 'ColorController',
+    'item_models' => 'ItemModelController',
+    'items' => 'ItemController',
+    'sizes' => 'SizeController'
+]);
