@@ -5,7 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
-{    
+{
+    public $timestamps = false;    
     /**
      * Get the models for the item.
      */
