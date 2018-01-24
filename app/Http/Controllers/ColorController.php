@@ -36,10 +36,7 @@ class ColorController extends Controller
      */
     public function store(Request $request)
     {
-        $color = new Color;
-        $color->color = $request->color;
-        $color->save();
-
+        $color = Color::create($request->all());
         return redirect('colors');
     }
 
