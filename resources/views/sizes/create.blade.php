@@ -8,13 +8,15 @@
 
 {!! Form::open(['action' => 'SizeController@store']) !!}
 
-    {{--  dropdown list of categories --}}
-    {!! Form::select('cat_lbl', 
-        ['0' => 'Select Category', 
-        '1' => 'Sees Sunlight', 
-        '2' => 'Foosball Fanatic', 
-        '3' => 'Basement Dweller']) 
-    !!}
+    {{--  dropdown list of categories  --}}
+    <select  id="categories" class="drop" name="categories">
+        <option value="0">Select Category</option>
+        @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category->category_name}}</option>
+        @endforeach
+    </select>
+    <br>
+
 
     {!! Form::label('size_lbl', 'Enter Size:') !!}
     {!! Form::text('size') !!}
@@ -24,14 +26,3 @@
 {!! Form::close() !!}
 
 @endsection 
-
-{{--  echo Form::select('animal', [
-    'Cats' => ['leopard' => 'Leopard'],
-    'Dogs' => ['spaniel' => 'Spaniel'],
-]);
-
-@foreach ($data as $key -> $value)
-[
-    "$value" => ["$key" => "$value"]
-]
-@endforeach   --}}

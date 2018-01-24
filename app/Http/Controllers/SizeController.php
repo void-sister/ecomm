@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Size;
-// use App\Category; for dropdown list on view
+use App\Category;
+
 use Illuminate\Http\Request;
 
 class SizeController extends Controller
@@ -17,7 +18,7 @@ class SizeController extends Controller
     {
         $sizes = Size::all();
 
-        return view("blog", ["sizes"=>$sizes]);
+        return view("sizes.index", ["sizes"=>$sizes]);
     }
 
     /**
@@ -27,7 +28,8 @@ class SizeController extends Controller
      */
     public function create()
     {
-        return view('sizes.create');
+        $categories = Category::all();
+        return view("sizes.create", ["categories"=>$categories]);
     }
 
     /**
