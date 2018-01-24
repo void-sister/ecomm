@@ -9,6 +9,14 @@
 {!! Form::open(['action' => 'ItemController@store']) !!}
 
     {{--  dropdown list of categories --}}
+    <select  id="categories" class="drop" name="categories">
+        <option value="0">Select Category</option>
+        @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category->category_name}}</option>
+        @endforeach
+    </select>
+    <br>
+
     {!! Form::label('item_lbl', 'Item Name:') !!}
     {!! Form::text('item_name') !!}
     <br>
