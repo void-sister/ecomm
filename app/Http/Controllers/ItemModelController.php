@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\ItemModel;
+use App\Item;
+
 use Illuminate\Http\Request;
 
 class ItemModelController extends Controller
@@ -26,7 +28,8 @@ class ItemModelController extends Controller
      */
     public function create()
     {
-        return view('item_models.create');
+        $items = Item::all();
+        return view("item_models.create", ["items"=>$items]);
     }
 
     /**

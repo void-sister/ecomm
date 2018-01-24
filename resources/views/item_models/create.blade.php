@@ -9,6 +9,14 @@
 {!! Form::open(['action' => 'ItemModelController@store']) !!}
 
     {{--  dropdown list of items--}}
+    <select  id="items" class="drop" name="items">
+        <option value="0">Select Item</option>
+        @foreach($items as $item)
+            <option value="{{$item->id}}">{{$item->item_name}}</option>
+        @endforeach
+    </select>
+    <br>
+
     {!! Form::label('sex_lbl', 'Sex:') !!}
     <br>
     {!! Form::label('msex_lbl', 'Male:') !!}
