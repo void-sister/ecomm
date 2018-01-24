@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    public $timestamps = false;    
+    public $timestamps = false;
+    
+    protected $fillable = ['item_name', 'item_price', 'category_id'];
+
+
+
     /**
      * Get the models for the item.
      */

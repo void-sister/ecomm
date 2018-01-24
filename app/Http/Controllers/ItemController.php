@@ -40,9 +40,10 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = Item::create($request->all());
+        return redirect('items');
     }
-
+    
     /**
      * Display the specified resource.
      *
