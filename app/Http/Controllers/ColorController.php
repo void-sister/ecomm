@@ -16,7 +16,7 @@ class ColorController extends Controller
     {
         $colors = Color::all();
 
-        return view('colors.index')->with('colors', $colors);
+        return view("colors.index", ["colors"=>$colors]);
     }
 
     /**

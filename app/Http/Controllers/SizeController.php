@@ -17,7 +17,7 @@ class SizeController extends Controller
     {
         $sizes = Size::all();
 
-        return view('sizes.index')->with('sizes', $sizes);
+        return view("blog", ["sizes"=>$sizes]);
     }
 
     /**

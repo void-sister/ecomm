@@ -16,7 +16,7 @@ class ItemController extends Controller
     {
         $items = Item::all();
 
-        return view('items.index')->with('items', $items);
+        return view("items.index", ["items"=>$items]);
     }
 
     /**
