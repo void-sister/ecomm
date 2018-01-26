@@ -9,7 +9,7 @@
 {!! Form::open(['action' => 'ItemModelController@store']) !!}
 
     {{--  dropdown list of items--}}
-    <select  id="items" class="drop" name="items">
+    <select  id="item_id" class="drop" name="item_id">
         <option value="0">Select Item</option>
         @foreach($items as $item)
             <option value="{{$item->id}}">{{$item->item_name}}</option>
@@ -17,16 +17,20 @@
     </select>
     <br>
 
+    {!! Form::label('model_lbl', 'Model Name:') !!}
+    {!! Form::text('model_name') !!}
+    <br>
     {!! Form::label('sex_lbl', 'Sex:') !!}
     <br>
     {!! Form::label('msex_lbl', 'Male:') !!}
     {!! Form::radio('msex', 'male', true) !!}
     {!! Form::label('fsex_lbl', 'Female:') !!}
     {!! Form::radio('fsex', 'female') !!}
+    <br> 
+    
     <br>
-    {!! Form::label('model_lbl', 'Model Name:') !!}
-    {!! Form::text('model_name') !!}
-    <br>
+    
+
     {!! Form::submit('Submit') !!}
 
 {!! Form::close() !!}

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ItemModel extends Model
 {
     protected $table = 'models';
+    protected $fillable = ['model_name, item_id'];
     public $timestamps = false;
 
     /**

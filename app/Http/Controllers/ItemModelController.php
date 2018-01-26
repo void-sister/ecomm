@@ -40,7 +40,14 @@ class ItemModelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item_model = new ItemModel;
+        $item = Item::find($request->item_id);
+        $item_model->item()->associate($item);
+        $item_model->model_name = $request->model_name;
+        
+        $item_model->save();
+
+        return redirect('item_models');       
     }
 
     /**
