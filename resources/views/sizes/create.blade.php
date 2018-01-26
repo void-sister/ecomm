@@ -9,7 +9,7 @@
 {!! Form::open(['action' => 'SizeController@store']) !!}
 
     {{--  dropdown list of categories  --}}
-    <select  id="categories" class="drop" name="categories">
+    <select  id="category_id" class="drop" name="category_id">
         <option value="0">Select Category</option>
         @foreach($categories as $category)
             <option value="{{$category->id}}">{{$category->category_name}}</option>

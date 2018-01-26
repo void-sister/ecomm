@@ -40,7 +40,14 @@ class SizeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $size = new Size;
+        $category = Category::find($request->category_id);
+        $size->category()->associate($category);
+        $size->size = $request->size;
+        
+        $size->save();
+
+        return redirect('sizes');     
     }
 
     /**

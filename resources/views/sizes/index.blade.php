@@ -15,7 +15,7 @@
 @foreach ($sizes as $size)
 <tr>
     <td> {{$size->id}} </td>
-    <td> 1 </td>
+    <td> {{$size->category_id}} </td>
     <td> {{$size->size}} </td>
     <td>
         <a href="{{ URL::to('sizes/' . $size->id . '/edit') }}">Edit</a>
