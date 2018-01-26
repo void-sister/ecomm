@@ -40,7 +40,14 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        $item = Item::create($request->all());
+        $item = new Item;
+        $item->item_name = $request->item_name;
+        $item->item_price = $request->item_price;
+        
+        $category = Category::find($request->category_id);
+        $item->category()->associate($category); 
+         
+        $item->save();
         return redirect('items');
     }
     

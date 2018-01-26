@@ -20,7 +20,7 @@
     <td> {{$item->id}} </td>
     <td> {{$item->item_name}} </td>
     <td> {{$item->item_price}} </td>
-    <td> 1 </td>
+    <td> {{$item->category_id}} </td>
     <td> {{$item->item_description}} </td>
     <td> {{$item->other_item_details}} </td>
     <td>

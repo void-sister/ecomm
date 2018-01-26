@@ -23,7 +23,7 @@ class Item extends Model
     /**
      * Get the category of the item.
      */
-    public function user()
+    public function category()
     {
         return $this->belongsTo('App\Category')->withDefault();
     }
