@@ -69,9 +69,11 @@ class ItemModelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $items = Item::all();
+        $item_model = ItemModel::find($id);
+        return view("item_models.edit", ["item_model"=>$item_model, "items"=>$items]);
     }
-
+  
     /**
      * Update the specified resource in storage.
      *
@@ -81,7 +83,13 @@ class ItemModelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $item_model = ItemModel::find($id);
+        $item = Item::find($request->item_id);
+        $item_model->item()->associate($item);
+        $item_model->model_name = $request->model_name;
+        $item_model->save();
+
+        return redirect('item_models');   
     }
 
     /**
