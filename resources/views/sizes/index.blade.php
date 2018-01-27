@@ -18,7 +18,13 @@
     <td> {{$size->category_id}} </td>
     <td> {{$size->size}} </td>
     <td>
-        <a href="{{ URL::to('sizes/' . $size->id . '/edit') }}">Edit</a>
+        <a href="{{ URL::to('sizes/' . $size->id . '/edit') }}">Edit</a>      
+    </td>
+    <td>
+        {{ Form::open(['url' => 'sizes/' . $size->id]) }}
+            {{ Form::hidden('_method', 'DELETE') }}
+            {{ Form::submit('Delete') }}
+        {{ Form::close() }}        
     </td>
 </tr>
 @endforeach
@@ -27,4 +33,3 @@
 <br>
 <a href="{{ URL::to('sizes/create') }}">Add</a>
 @endsection 
-

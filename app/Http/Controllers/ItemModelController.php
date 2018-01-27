@@ -100,6 +100,9 @@ class ItemModelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item_model = ItemModel::find($id);
+        $item_model->delete();
+
+        return redirect("item_models");   
     }
 }

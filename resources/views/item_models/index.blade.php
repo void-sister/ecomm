@@ -22,6 +22,12 @@
     <td>
         <a href="{{ URL::to('item_models/' . $item_model->id . '/edit') }}">Edit</a>
     </td>
+    <td>
+        {{ Form::open(['url' => 'item_models/' . $item_model->id]) }}
+            {{ Form::hidden('_method', 'DELETE') }}
+            {{ Form::submit('Delete') }}
+        {{ Form::close() }}        
+    </td>
 </tr>
 @endforeach
 </table>

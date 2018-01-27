@@ -18,6 +18,12 @@
     <td>
         <a href="{{ URL::to('colors/' . $color->id . '/edit') }}">Edit</a>
     </td>
+    <td>
+        {{ Form::open(['url' => 'colors/' . $color->id]) }}
+            {{ Form::hidden('_method', 'DELETE') }}
+            {{ Form::submit('Delete') }}
+        {{ Form::close() }}        
+    </td>
 </tr>
 @endforeach
 </table>

@@ -84,6 +84,9 @@ class ColorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $color = Color::find($id);
+        $color->delete();
+
+        return redirect("colors");   
     }
 }

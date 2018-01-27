@@ -18,6 +18,12 @@
     <td>
         <a href="{{ URL::to('categories/' . $category->id . '/edit') }}">Edit</a>
     </td>
+    <td>
+        {{ Form::open(['url' => 'categories/' . $category->id]) }}
+            {{ Form::hidden('_method', 'DELETE') }}
+            {{ Form::submit('Delete') }}
+        {{ Form::close() }}        
+    </td>
 </tr>
 @endforeach
 </table>

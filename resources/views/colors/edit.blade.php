@@ -7,8 +7,8 @@
 @section('content')
 
 {!! Form::model($color, array('action' => 
-array('ColorController@update', $color->id), 
-'method' => 'PUT')) !!}
+    array('ColorController@update', $color->id), 
+    'method' => 'PUT')) !!}
 
     {!! Form::label('color_lbl', 'Color Name:') !!}
     {!! Form::text('color') !!}

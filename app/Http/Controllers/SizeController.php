@@ -100,13 +100,11 @@ class SizeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $size = Size::find($id);
+        $size->delete();
+
+        return redirect("sizes");   
     }
 
-    // ??for dropdown list
-    // public function category(Category $category)
-    // {
-    //     $data = $category->all();
-    //     return view('sizes.create', $data);
-    // }
+    
 }
