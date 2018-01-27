@@ -48,7 +48,7 @@ class ColorController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -59,7 +59,8 @@ class ColorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $color = Color::find($id);
+        return view("colors.edit", ["color"=>$color]);
     }
 
     /**
@@ -68,11 +69,13 @@ class ColorController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
-    {
-        //
+    public function update($id, Request $request)
+    {        
+        $color = Color::find($id);
+        $color->color = $request->color;
+        $color->save();
+        return redirect('colors');
     }
-
     /**
      * Remove the specified resource from storage.
      *
