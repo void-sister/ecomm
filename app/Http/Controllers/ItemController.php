@@ -70,7 +70,9 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $item = Item::find($id);
+        return view("items.edit", ["item"=>$item, "categories"=>$categories]);
     }
 
     /**
@@ -82,7 +84,14 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $item = Item::find($id);
+        $item->item_name = $request->item_name;
+        $item->item_price = $request->item_price;
+        $category = Category::find($request->category_id);
+        $item->category()->associate($category);       
+        $item->save();
+
+        return redirect('items');   
     }
 
     /**
