@@ -47,7 +47,7 @@ class SizeController extends Controller
         
         $size->save();
 
-        return redirect('sizes');     
+        return redirect("sizes");     
     }
 
     /**
@@ -69,7 +69,9 @@ class SizeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $size = Size::find($id);
+        return view("sizes.edit", ["size"=>$size, "categories"=>$categories]);
     }
 
     /**
@@ -81,7 +83,13 @@ class SizeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $size = Size::find($id);
+        $category = Category::find($request->category_id);
+        $size->category()->associate($category);
+        $size->size = $request->size;
+        $size->save();
+
+        return redirect("sizes");   
     }
 
     /**
